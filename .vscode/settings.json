@@ -1,0 +1,18 @@
+{
+	"files.exclude": {
+		"public": true,
+		".gitignore": true,
+		".gitattributes": true,
+		"**/Partials": true,
+		"node_modules": true,
+		"yarn.lock": true,
+		"package-lock.json": true,
+		"package.json": true,
+		"**/note.txt": true,
+		"**/images": true,
+		"*/index.js": true,
+		"**/Utility": true,
+		"**/Ajax": true
+	},
+	"extensions.ignoreRecommendations": true
+}

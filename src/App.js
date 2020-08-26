@@ -3,6 +3,7 @@ import {Cards, Chart, Country} from './components';
 import styles from './App.module.css';
 import coronaImage from './images/corona.png';
 import {fetchData} from './api';
+import {Card} from '@material-ui/core';
 export class App extends Component {
 	state = {
 		data: {},
@@ -22,6 +23,7 @@ export class App extends Component {
 		return (
 			<div className={styles.container}>
 				<img className={styles.imgage} src={coronaImage} alt="covid-19" />
+				<Card>{new Date(data.lastUpdate).toDateString()}</Card>
 				<Cards data={data} />
 				<Country countrySelect={this.countryHandler} />
 				<Chart data={data} country={country} />
