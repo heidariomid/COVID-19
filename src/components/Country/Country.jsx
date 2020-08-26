@@ -21,7 +21,7 @@ const Country = ({countrySelect}) => {
 	return (
 		<FormControl className={styles.formControl}>
 			<NativeSelect defaultValue="" onChange={(e) => countrySelect(e.target.value)}>
-				<option value="Global">Global</option>
+				<option value="">Global</option>
 				{CountryName}
 			</NativeSelect>
 		</FormControl>
