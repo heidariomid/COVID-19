@@ -12,7 +12,8 @@
 		"**/images": true,
 		"*/index.js": true,
 		"**/Utility": true,
-		"**/Ajax": true
+		"**/Ajax": true,
+		"ProVersion": true
 	},
 	"extensions.ignoreRecommendations": true
 }
