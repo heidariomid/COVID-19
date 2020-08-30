@@ -5,8 +5,8 @@ import cx from 'classnames';
 import CountUp from 'react-countup';
 import {Card, CardContent, Typography, Grid} from '@material-ui/core';
 const Cards = ({data}) => {
-	const {confirmed, recovered, deaths, lastUpdate} = data;
-	if (!confirmed) {
+	const {cases, recovered, deaths, updated} = data;
+	if (!cases) {
 		return <Loader />;
 	}
 	return (
@@ -18,7 +18,7 @@ const Cards = ({data}) => {
 							Infected
 						</Typography>
 						<Typography variant="h5">
-							<CountUp start={10000} end={confirmed.value} duration={2.5} separator="," />
+							<CountUp start={10000} end={cases} duration={2.5} separator="," />
 						</Typography>
 						<Typography variant="body2">Number of active cases from COVID-19.</Typography>
 					</CardContent>
@@ -29,7 +29,7 @@ const Cards = ({data}) => {
 							Recovered
 						</Typography>
 						<Typography variant="h5">
-							<CountUp start={10000} end={recovered.value} duration={2.5} separator="," />
+							<CountUp start={10000} end={recovered} duration={2.5} separator="," />
 						</Typography>
 						<Typography variant="body2">Number of recoveries from COVID-19.</Typography>
 					</CardContent>
@@ -40,7 +40,7 @@ const Cards = ({data}) => {
 							Deaths
 						</Typography>
 						<Typography variant="h5">
-							<CountUp start={10000} end={deaths.value} duration={1.5} separator="," />
+							<CountUp start={10000} end={deaths} duration={1.5} separator="," />
 						</Typography>
 						<Typography variant="body2">Number of deaths caused by COVID-19.</Typography>
 					</CardContent>

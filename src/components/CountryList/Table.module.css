@@ -1,0 +1,26 @@
+.table {
+	margin-top: 20px;
+	overflow: scroll;
+	height: 200px;
+	color: #6a5d5d;
+}
+.tableCell {
+	min-width: 170;
+	align-self: center;
+}
+.table tr {
+	display: flex;
+	justify-content: space-between;
+}
+.table td {
+	padding: 0.3rem;
+	justify-content: center;
+	align-self: center;
+}
+.table tr:nth-of-type(odd) {
+	background-color: #f3f2f8;
+}
+.images {
+	width: 40px;
+	height: 30px;
+}

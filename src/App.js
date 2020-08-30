@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Cards, Chart, Country} from './components';
+import {Cards, Chart, CountrySearch, Map, CountryList} from './components';
 import styles from './App.module.css';
 import coronaImage from './images/corona.png';
 import {fetchData} from './api';
@@ -21,12 +21,22 @@ export class App extends Component {
 	render() {
 		const {data, country} = this.state;
 		return (
-			<div className={styles.container}>
-				<img className={styles.imgage} src={coronaImage} alt="covid-19" />
-				<Card>{new Date(data.lastUpdate).toDateString()}</Card>
-				<Cards data={data} />
-				<Country countrySelect={this.countryHandler} />
-				<Chart data={data} country={country} />
+			<div className={styles.app}>
+				<div className={styles.app_left}>
+					<div className={styles.app_header}>
+						<Card className={styles.dateUpdate}>{new Date(data.updated).toDateString()}</Card>
+						<img className={styles.imgage} src={coronaImage} alt="covid-19" />
+						<CountrySearch countrySelect={this.countryHandler} />
+					</div>
+					<div className={styles.app_body}>
+						<Cards data={data} />
+						<Chart data={data} country={country} />
+						<Map />
+					</div>
+				</div>
+				<div className={styles.app_right}>
+					<CountryList />
+				</div>
 			</div>
 		);
 	}

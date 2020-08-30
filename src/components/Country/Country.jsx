@@ -14,13 +14,13 @@ const Country = ({countrySelect}) => {
 		countries();
 	}, []);
 	const CountryName = countries.map((countryName, i) => (
-		<option key={i} value={countryName}>
-			{countryName}
+		<option key={i} value={countryName.country}>
+			{countryName.country}
 		</option>
 	));
 	return (
 		<FormControl className={styles.formControl}>
-			<NativeSelect defaultValue="" onChange={(e) => countrySelect(e.target.value)}>
+			<NativeSelect variant="outlined" defaultValue="" onChange={(e) => countrySelect(e.target.value)}>
 				<option value="">Global</option>
 				{CountryName}
 			</NativeSelect>

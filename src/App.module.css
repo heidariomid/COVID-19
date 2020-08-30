@@ -1,21 +1,49 @@
+* {
+	font-family: Vazir;
+}
 body {
 	background-color: rgb(255, 255, 255);
 }
-.container {
-	align-items: center;
-	justify-content: center;
+.app {
 	display: flex;
-	flex-direction: column;
+	justify-content: space-evenly;
+	padding: 20px;
+}
+.app_header {
+	display: flex;
+	align-items: center;
+	margin-bottom: 20px;
+	justify-content: space-between;
+}
+.app_body {
+	flex: 0.4;
+}
+.app_left {
+	flex: 0.9;
+}
+.app_right {
+	max-height: 300px;
+	box-shadow: -5px 20px 20px 0px #1f1e1e34 !important;
 }
 .imgage {
-	width: 370px;
+	width: 300px;
 	margin-top: 50px;
 }
+
 @media (max-width: 770px) {
 	.container {
 		margin: 0 10%;
 	}
 	.imgage {
 		width: 100%;
+	}
+}
+@media (max-width: 990px) {
+	.app {
+		margin: 0 10%;
+		flex-direction: column;
+	}
+	.imgage {
+		width: 80%;
 	}
 }
