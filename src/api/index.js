@@ -32,10 +32,18 @@ export const fetchDailyData = async () => {
 	}
 };
 
-export const fetchCountries = async () => {
+export const fetchCountries = async (country) => {
 	try {
+		if (country) {
+			const {
+				data: {
+					countryInfo: {lat, long},
+				},
+			} = await axios.get(`countries/${country}`);
+			return {lat, lng: long};
+		}
 		const {data} = await axios.get('countries');
-		const countries = data.map(({country, cases, todayCases, countryInfo: {iso2, flag}}) => ({country, iso2, cases, todayCases, flag}));
+		const countries = data.map(({country, recovered, deaths, cases, todayCases, countryInfo: {iso2, flag, lat, long}}) => ({country, iso2, cases, recovered, deaths, todayCases, flag, lat, long}));
 		return countries;
 	} catch (error) {
 		console.log(error.message);

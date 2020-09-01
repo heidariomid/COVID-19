@@ -9,7 +9,7 @@
 		"package-lock.json": true,
 		"package.json": true,
 		"**/note.txt": true,
-		"**/images": true,
+		// "**/images": true,
 		"*/index.js": true,
 		"**/Utility": true,
 		"**/Ajax": true,

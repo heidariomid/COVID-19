@@ -4,8 +4,8 @@ import Loader from '../Spinner';
 import cx from 'classnames';
 import CountUp from 'react-countup';
 import {Card, CardContent, Typography, Grid} from '@material-ui/core';
-const Cards = ({data}) => {
-	const {cases, recovered, deaths, updated} = data;
+const Cards = ({data, dataSettoMap}) => {
+	const {cases, recovered, deaths} = data;
 	if (!cases) {
 		return <Loader />;
 	}
@@ -13,7 +13,7 @@ const Cards = ({data}) => {
 		<div className={styles.container}>
 			<Grid container spacing={3} justify="center">
 				<Grid item component={Card} xs={12} md={3} className={cx(styles.card, styles.infected)}>
-					<CardContent>
+					<CardContent onClick={() => dataSettoMap('cases')}>
 						<Typography color="textSecondary" gutterBottom variant="h4">
 							Infected
 						</Typography>
@@ -24,7 +24,7 @@ const Cards = ({data}) => {
 					</CardContent>
 				</Grid>
 				<Grid item component={Card} xs={12} md={3} className={cx(styles.card, styles.recovered)}>
-					<CardContent>
+					<CardContent onClick={() => dataSettoMap('recovered')}>
 						<Typography color="textSecondary" gutterBottom variant="h4">
 							Recovered
 						</Typography>
@@ -35,7 +35,7 @@ const Cards = ({data}) => {
 					</CardContent>
 				</Grid>
 				<Grid item component={Card} xs={12} md={3} className={cx(styles.card, styles.deaths)}>
-					<CardContent>
+					<CardContent onClick={() => dataSettoMap('deaths')}>
 						<Typography color="textSecondary" gutterBottom variant="h4">
 							Deaths
 						</Typography>

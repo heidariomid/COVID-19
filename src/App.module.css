@@ -2,7 +2,7 @@
 	font-family: Vazir;
 }
 body {
-	background-color: rgb(255, 255, 255);
+	background-color: #fbfbfb;
 }
 .app {
 	display: flex;
@@ -22,13 +22,18 @@ body {
 	flex: 0.9;
 }
 .app_right {
-	max-height: 300px;
-	box-shadow: -5px 20px 20px 0px #1f1e1e34 !important;
+	/* max-height: 300px;
+	box-shadow: -5px 20px 20px 0px #1f1e1e34 !important; */
 }
 .imgage {
 	width: 200px;
 
 	margin-top: 2px;
+}
+.date {
+	padding: 5px !important;
+	box-shadow: -1px 2px 1px 0px #1f1e1e34 !important;
+	color: rgb(93, 93, 93) !important;
 }
 
 @media (max-width: 770px) {
@@ -36,7 +41,12 @@ body {
 		margin: 0 10%;
 	}
 	.imgage {
-		width: 100%;
+		width: 50% !important;
+	}
+	.date {
+		padding: 2px !important;
+		font-size: 10px !important;
+		width: 80px;
 	}
 }
 @media (max-width: 990px) {

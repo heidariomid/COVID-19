@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import styles from './Country.module.css';
-import cx from 'classnames';
 import {fetchCountries} from '../../api';
+import globalImg from '../../images/global.png';
 import {NativeSelect, FormControl} from '@material-ui/core';
 
 const Country = ({countrySelect}) => {
@@ -21,7 +21,10 @@ const Country = ({countrySelect}) => {
 	return (
 		<FormControl className={styles.formControl}>
 			<NativeSelect variant="outlined" defaultValue="" onChange={(e) => countrySelect(e.target.value)}>
-				<option value="">Global</option>
+				<option value="">
+					Global
+					{/* <img src={globalImg} alt="global" /> */}
+				</option>
 				{CountryName}
 			</NativeSelect>
 		</FormControl>

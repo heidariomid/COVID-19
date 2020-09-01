@@ -12,7 +12,7 @@ const TableRank = () => {
 			width: '100%',
 		},
 		container: {
-			maxHeight: 740,
+			maxHeight: 500,
 		},
 	});
 	const classes = useStyles();
