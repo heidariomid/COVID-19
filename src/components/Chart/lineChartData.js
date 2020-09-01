@@ -14,7 +14,6 @@ export const lineChartData = (data) => {
 			}
 			lastDataPoint = data[casesType][date];
 		}
-		console.log(chartData);
 		return chartData;
 	};
 
